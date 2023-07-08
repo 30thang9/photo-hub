@@ -1,0 +1,144 @@
+.header-wrapper {
+    background-color: hsl(252, 50%, 100%);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border: solid 2px black;
+}
+
+.form-control {
+    border: 1px solid black;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.menu-item {
+    padding: 0 15px 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    color: #FF9551;
+}
+
+.banner {
+    height: 100vh;
+    background-image: url(./assets/hj.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-input-group {
+    width: 40%;
+}
+
+.wrapper-search-bar {
+    width: calc(100% - 45px);
+}
+
+.sm-search {
+    width: 45px;
+}
+
+.sm-search-lg {
+    background-color: hsl(252, 50%, 95%);
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.search-bar {
+    width: 40%;
+    background-color: hsl(252, 50%, 95%);
+    padding: 0.6rem 0.3rem 0.6rem 0.5rem;
+}
+
+.search-bar-u {
+    border-radius: 0.3rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 60%;
+}
+
+.search-bar-lg {
+    width: 100%;
+}
+
+.search-bar input[type="search"] {
+    width: calc(100% - 30px) !important;
+    background: transparent;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    color: hsl(252, 30%, 50%);
+    border: none;
+    outline: none;
+}
+
+.search-bar-u input[type="search"] {
+    width: calc(100% - 10px) !important;
+}
+
+#single_submit {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px) {
+    .btn-login {
+        display: none;
+    }
+
+    .input-search {
+        width: 50%;
+    }
+
+    .banner-input-group {
+        width: 80%;
+    }
+
+    .search-bar input[type="search"] {
+        margin-left: 0.4rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .banner-input-group {
+        width: 90%;
+    }
+}
+
+
+
+
+
+.position-relative {
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.position-relative:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+}
+
+
+.card:hover .rounded-circle {
+    transform: scale(1.1);
+}
+
+.overlay a {
+    cursor: zoom-in;
+}

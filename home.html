@@ -18,19 +18,16 @@
     <header>
         <div class="header-wrapper fixed-top shadow">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="row w-100" style="height:50px">
+                <div class="row w-100 m-0" style="height:50px">
                     <div class="col-3 col-md-2">
-                        <div>
-                            <a class="navbar-brand" href="#" style="margin-left: 10px;">
-                                <img src="./assets/logo.png" alt="Logo" style="height:90%; object-fit:cover">
+                        <div class="h-100">
+                            <a class="navbar-brand h-100" href="#" style="margin-left: 10px;">
+                                <img src="./assets/logo.png" alt="Logo"
+                                    style="height:90%; margin-top:2.5px; object-fit:cover">
                             </a>
                         </div>
                     </div>
                     <div class="col-6 col-md-7 d-flex justify-content-center align-items-center">
-                        <!-- <div class="search-bar">
-                            <i class="fas fa-search"></i>
-                            <input type="search" placeholder="search" />
-                        </div> -->
                         <div class="input-group mx-auto w-100">
                             <div class="wrapper-search-bar d-flex">
                                 <div class="search-bar search-bar-u search-bar-lg">
@@ -47,61 +44,103 @@
                         <div class="mx-3">
                             <a class="btn btn-dark btn-login" href="#">Đăng nhập</a>
                         </div>
-                        <div class="dropdown dropstart text-end">
-                            <button type="button" class="btn rounded" data-bs-toggle="dropdown">
-                                <span class="navbar-toggler-icon"></span>
+                        <div class="btn-group">
+                            <button type="button" class="btn rounded"
+                                style="border: none; outline: none; padding-right: 30px;" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" data-bs-auto-close="false">
+                                <i class="bi bi-justify" style="font-size:25px;"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="mx-3">
-                                    <a class="btn btn-dark btn-login" href="#">Đăng nhập</a>
+                            <div class="dropdown-menu dropdown-menu-end p-4" id="menu-toggle">
+                                <div class="row menu-mobile w-100 m-0">
+                                    <ul class="menu-list-mobile">
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li>
+                                            <label for="btn-2" class="first">Du lịch
+                                                <span class="fas fa-caret-down"></span>
+                                            </label>
+                                            <input type="checkbox" class="ipdrdown" id="btn-2">
+                                            <ul>
+                                                <li><a href="#">Chân dung</a></li>
+                                                <li><a href="#">Phong cảnh</a></li>
+                                                <li><a href="#">Đường phố</a></li>
+                                                <li><a href="#">Thể thao</a></li>
+                                                <li><a href="#">Kỷ yếu</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <label for="btn-3" class="second">Lookbook
+                                                <span class="fas fa-caret-down"></span>
+                                            </label>
+                                            <input type="checkbox" class="ipdrdown" id="btn-3">
+                                            <ul>
+                                                <li></li><a href="#">Thời trang</a>
+                                        </li>
+                                        <li></li><a href="#">Phụ kiện</a></li>
+                                        <li></li><a href="#">Mỹ phẩm</a></li>
+                                        <li></li><a href="#">Thực phẩm</a></li>
+                                    </ul>
+                                    </li>
+                                    <li><a href="#">Catalog</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                    </ul>
                                 </div>
-                            </ul>
+                                <!-- <div class="dropdown-divider"></div> -->
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-dark btn-login-mobile">Đăng nhập</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
             <div class="row menu w-100 m-0">
-                <div class="overflow-x-auto">
+                <div class="">
                     <hr class="mb-3 mx-n4" style="margin-top:0">
-                    <div class="d-flex justify-content-center align-items-center" style="white-space: nowrap;">
-                        <a class="menu-item" href="./home.html">Trang chủ</a>
-                        <a class="menu-item" href="#">Du lịch</a>
-                        <a class="menu-item" href="#">Lookbook</a>
-                        <a class="menu-item" href="#">Catalog</a>
-                        <a class="menu-item" href="#">Khác</a>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex align-items-center menu-container"
+                            style="white-space: nowrap; list-style-type: none;">
+                            <li><a class="menu-item" href="./home.html">Trang chủ</a></li>
+                            <li class="dropdown dropdown-li">
+                                <a class="menu-item drop-a-btn" href="#">Du lịch</a>
+                                <div class="dropdown-content-hover">
+                                    <a href="#">Chân dung</a>
+                                    <a href="#">Phong cảnh</a>
+                                    <a href="#">Đường phố</a>
+                                    <a href="#">Thể thao</a>
+                                    <a href="#">Kỷ yếu</a>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-li">
+                                <a class="menu-item drop-a-btn" href="#">Lookbook</a>
+                                <div class="dropdown-content-hover">
+                                    <a href="#">Thời trang</a>
+                                    <a href="#">Phụ kiện</a>
+                                    <a href="#">Mỹ phẩm</a>
+                                    <a href="#">Thực phẩm</a>
+                                </div>
+                            </li>
+                            <li><a class="menu-item" href="#">Catalog</a></li>
+                            <li><a class="menu-item" href="#">Khác</a></li>
+                        </div>
                     </div>
+
                     <hr class="my-3 mx-n4">
                 </div>
             </div>
-
-
         </div>
         <div class="row banner w-100 m-0">
             <div class="d-flex flex-column justify-content-center align-items-center" style="height:100%">
                 <h1>PHOTOHUB</h1>
-                <!-- <img src="./assets/background.jpg" alt="" style="width: 100%;" height="100%"> -->
-                <p class="my-4">Picture - Perfect Memories, Just a click array</p>
-                <!-- <form class="w-100 d-flex m-0">
-                    <div class="input-group mx-auto banner-input-group">
-                        <div class="search-bar">
-                            <i class="fas fa-search"></i>
-                            <input type="search" placeholder="search" />
-                        </div>
-                    </div>
-                </form> -->
+                <p class="my-4">Picture - Perfect Memories, Just a click away</p>
                 <div class="input-group mx-auto banner-input-group">
                     <div class="wrapper-search-bar d-flex">
                         <div class="search-bar search-bar-u">
-                            <input id="double-search-keyword" type="search" placeholder="search" />
+                            <input id="double-search-keyword" type="search" placeholder="Dịch vụ bạn đang tìm kiếm" />
                         </div>
                         <div style="border: 1px solid black;"></div>
                         <div class="search-bar">
                             <i class="bi bi-geo-alt-fill"></i>
-                            <input id="double-search-location" type="search" placeholder="search" />
+                            <input id="double-search-location" type="search" placeholder="Địa điểm" />
                         </div>
                     </div>
                     <div class="btn btn-primary large-btn d-flex justify-content-center align-items-center sm-search"
@@ -130,13 +169,12 @@
                                         <a href="./detail.html">
                                             <div class="rounded-circle overflow-hidden"
                                                 style="width: 100%; aspect-ratio: 1;">
-                                                <img src="./assets/avatar.jpeg" alt="Avatar" class="w-100">
+                                                <img src="./assets/avt1.JPG" alt="Avatar" class="w-100">
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-10 d-flex align-items-center">
-                                        <h5 class="card-title">Nguyễn Văn A</h5>
-                                        <!-- <p class="card-text">Mô tả sản phẩm 1.</p> -->
+                                        <h5 class="card-title">Mai Hương</h5>
                                     </div>
                                 </div>
                             </div>
@@ -156,13 +194,12 @@
                                         <a href="#">
                                             <div class="rounded-circle overflow-hidden"
                                                 style="width: 100%; aspect-ratio: 1;">
-                                                <img src="./assets/avatar.jpeg" alt="Avatar" class="w-100">
+                                                <img src="./assets/avt2.webp" alt="Avatar" class="w-100">
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-10 d-flex align-items-center">
-                                        <h5 class="card-title">Nguyễn Văn B</h5>
-                                        <!-- <p class="card-text">Mô tả sản phẩm 1.</p> -->
+                                        <h5 class="card-title">Trần Thị B</h5>
                                     </div>
                                 </div>
                             </div>
@@ -182,24 +219,120 @@
                                         <a href="#">
                                             <div class="rounded-circle overflow-hidden"
                                                 style="width: 100%; aspect-ratio: 1;">
-                                                <img src="./assets/avatar.jpeg" alt="Avatar" class="w-100">
+                                                <img src="./assets/avt3.jpeg" alt="Avatar" class="w-100">
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-10 d-flex align-items-center">
                                         <h5 class="card-title">Nguyễn Văn C</h5>
-                                        <!-- <p class="card-text">Mô tả sản phẩm 1.</p> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="mb-3 col-md-4">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./assets/avt2.webp" class="card-img-top" alt="Product 1"
+                                    style="height: 100%;">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="card-body" style="position: absolute; bottom: 0; color: white; width: 100%;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a href="./detail.html">
+                                            <div class="rounded-circle overflow-hidden"
+                                                style="width: 100%; aspect-ratio: 1;">
+                                                <img src="./assets/avt1.JPG" alt="Avatar" class="w-100">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 d-flex align-items-center">
+                                        <h5 class="card-title">Mai Hương</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./assets/avt3.jpeg" class="card-img-top" alt="Product 1"
+                                    style="height: 100%;">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="card-body" style="position: absolute; bottom: 0; color: white; width: 100%;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a href="./detail.html">
+                                            <div class="rounded-circle overflow-hidden"
+                                                style="width: 100%; aspect-ratio: 1;">
+                                                <img src="./assets/avt3.jpeg" alt="Avatar" class="w-100">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 d-flex align-items-center">
+                                        <h5 class="card-title">Nguyễn Văn C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./assets/chup-anh-mon-an-laang-10.jpeg" class="card-img-top" alt="Product 1"
+                                    style="height: 100%;">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="card-body" style="position: absolute; bottom: 0; color: white; width: 100%;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a href="./detail.html">
+                                            <div class="rounded-circle overflow-hidden"
+                                                style="width: 100%; aspect-ratio: 1;">
+                                                <img src="./assets/avt3.jpeg" alt="Avatar" class="w-100">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 d-flex align-items-center">
+                                        <h5 class="card-title">Nguyễn Văn C</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./assets/chup-anh-mon-an-breakfast-10.jpeg" class="card-img-top"
+                                    alt="Product 1" style="height: 100%;">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="card-body" style="position: absolute; bottom: 0; color: white; width: 100%;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <a href="./detail.html">
+                                            <div class="rounded-circle overflow-hidden"
+                                                style="width: 100%; aspect-ratio: 1;">
+                                                <img src="./assets/avt2.webp" alt="Avatar" class="w-100">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 d-flex align-items-center">
+                                        <h5 class="card-title">Trần Thị B</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="row row-cols-5 py-5 my-5 border-top">
+        <div class="row w-100 row-cols-5 py-5 my-5 border-top">
             <div class="col">
                 <a href="./home.html" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <i class="fa-solid fa-house"></i>

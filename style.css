@@ -1,8 +1,14 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .header-wrapper {
     background-color: hsl(252, 50%, 100%);
 }
 
-.form-control:focus {
+/* .form-control:focus {
     box-shadow: none;
     outline: none;
     border: solid 2px black;
@@ -13,6 +19,18 @@
     border-radius: 25px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+} */
+
+.menu-container {
+    -ms-overflow-style: none;
+    /* Ẩn thanh cuộn trên IE 10+ */
+    scrollbar-width: none;
+    /* Ẩn thanh cuộn trên các trình duyệt mới */
+}
+
+.menu-container::-webkit-scrollbar {
+    display: none;
+    /* Ẩn thanh cuộn trên Chrome, Safari */
 }
 
 .menu-item {
@@ -86,9 +104,29 @@
     cursor: pointer;
 }
 
+.btn-login-mobile {
+    display: none;
+}
+
+.btn-group {
+    position: relative !important;
+}
+
+#menu-toggle {
+    position: absolute;
+    width: 90vw;
+    min-width: 250px;
+    max-width: 350px;
+    top: 50px !important;
+}
+
 @media only screen and (max-width: 900px) {
     .btn-login {
         display: none;
+    }
+
+    .btn-login-mobile {
+        display: block;
     }
 
     .input-search {
@@ -104,11 +142,31 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .menu {
+        display: none;
+    }
+
+    #menu-toggle {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        border-radius: 0%;
+        height: 100vh !important;
+    }
+}
+
 @media only screen and (max-width: 400px) {
     .banner-input-group {
         width: 90%;
     }
 }
+
+@media only screen and (max-width: 300px) {
+    .banner-input-group {
+        width: 98%;
+    }
+}
+
 
 
 
@@ -141,4 +199,196 @@
 
 .overlay a {
     cursor: zoom-in;
+}
+
+
+/**/
+.drop-a-btn {
+    /* background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none; */
+}
+
+.dropdown-li {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.dropdown-content-hover {
+    display: none;
+    position: absolute;
+    /* top: 0px; */
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content-hover a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600 bold;
+    font-size: 14px;
+}
+
+.dropdown-content-hover a:hover {
+    background-color: #ddd;
+}
+
+.dropdown-li:hover .dropdown-content-hover {
+    display: block;
+}
+
+.dropdown-li:hover .drop-a-btn {
+    /* background-color: #3e8e41; */
+}
+
+
+/**/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* .menu-mobile {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1b1b1b;
+    width: 400px;
+    line-height: 40px;
+    padding: 8px 25px;
+    border-radius: 5px;
+} */
+
+.menu-mobile label {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    cursor: pointer;
+}
+
+.button span {
+    float: right;
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.button span.rotate {
+    transform: rotate(-180deg);
+}
+
+.menu-mobile ul {
+    /* position: absolute; */
+    /* background: #1b1b1b; */
+    list-style: none;
+    /* top: 75px; */
+    /* left: 0; */
+    padding: 0;
+    width: 100%;
+    border-radius: 5px;
+    display: none;
+}
+
+.menu-mobile>ul {
+    display: block;
+}
+
+
+[id^=btn]:checked+ul {
+    display: block;
+}
+
+[id^=btn]:checked {
+    color: #FF9551;
+}
+
+
+/* .menu-mobile .menu-list-mobile:before {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: #1b1b1b;
+    right: 20px;
+    top: -10px;
+    transform: rotate(45deg);
+    z-index: -1;
+} */
+
+.menu-mobile ul li {
+    line-height: 40px;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.menu-mobile ul li label {
+    font-size: 16px;
+}
+
+.menu-mobile ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    font-weight: 500;
+}
+
+/* .menu-mobile ul li a:hover,
+.menu-mobile ul li label:hover {
+    color: cyan;
+} */
+.menu-mobile ul li:hover {
+    background-color: #f3f3f3;
+}
+
+.menu-mobile ul li:hover>a {
+    color: #FF9551;
+}
+
+.menu-mobile ul li:hover>label {
+    color: #FF9551;
+}
+
+.menu-mobile ul ul {
+    position: static;
+}
+
+.menu-mobile ul ul li {
+    line-height: 30px;
+    padding-left: 5px;
+    border-bottom: none;
+}
+
+.menu-mobile ul ul li a {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu-mobile ul li span {
+    font-size: 16px;
+    float: right;
+    margin-top: 10px;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+
+.menu-mobile ul li span.rotate {
+    transform: rotate(-180deg);
+}
+
+input.ipdrdown {
+    display: none;
 }

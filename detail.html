@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./bootstrap-select/bootstrap-select.css">
+    <script src="./bootstrap-select/bootstrap-select.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./detail.css">
@@ -19,19 +21,16 @@
     <header>
         <div class="header-wrapper fixed-top shadow">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="row w-100" style="height:50px">
+                <div class="row w-100 m-0" style="height:50px">
                     <div class="col-3 col-md-2">
-                        <div>
-                            <a class="navbar-brand" href="#" style="margin-left: 10px;">
-                                <img src="./assets/logo.png" alt="Logo" style="height:90%; object-fit:cover">
+                        <div class="h-100">
+                            <a class="navbar-brand h-100" href="#" style="margin-left: 10px;">
+                                <img src="./assets/logo.png" alt="Logo"
+                                    style="height:90%; margin-top:2.5px; object-fit:cover">
                             </a>
                         </div>
                     </div>
                     <div class="col-6 col-md-7 d-flex justify-content-center align-items-center">
-                        <!-- <div class="search-bar">
-                            <i class="fas fa-search"></i>
-                            <input type="search" placeholder="search" />
-                        </div> -->
                         <div class="input-group mx-auto w-100">
                             <div class="wrapper-search-bar d-flex">
                                 <div class="search-bar search-bar-u search-bar-lg">
@@ -48,38 +47,89 @@
                         <div class="mx-3">
                             <a class="btn btn-dark btn-login" href="#">Đăng nhập</a>
                         </div>
-                        <div class="dropdown dropstart text-end">
-                            <button type="button" class="btn rounded" data-bs-toggle="dropdown">
-                                <span class="navbar-toggler-icon"></span>
+                        <div class="btn-group">
+                            <button type="button" class="btn rounded"
+                                style="border: none; outline: none; padding-right: 30px;" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" data-bs-auto-close="false">
+                                <i class="bi bi-justify" style="font-size:25px;"></i>
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="mx-3">
-                                    <a class="btn btn-dark btn-login" href="#">Đăng nhập</a>
+                            <div class="dropdown-menu dropdown-menu-end p-4" id="menu-toggle">
+                                <div class="row menu-mobile w-100 m-0">
+                                    <ul class="menu-list-mobile">
+                                        <li><a href="#">Trang chủ</a></li>
+                                        <li>
+                                            <label for="btn-2" class="first">Du lịch
+                                                <span class="fas fa-caret-down"></span>
+                                            </label>
+                                            <input type="checkbox" class="ipdrdown" id="btn-2">
+                                            <ul>
+                                                <li><a href="#">Chân dung</a></li>
+                                                <li><a href="#">Phong cảnh</a></li>
+                                                <li><a href="#">Đường phố</a></li>
+                                                <li><a href="#">Thể thao</a></li>
+                                                <li><a href="#">Kỷ yếu</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <label for="btn-3" class="second">Lookbook
+                                                <span class="fas fa-caret-down"></span>
+                                            </label>
+                                            <input type="checkbox" class="ipdrdown" id="btn-3">
+                                            <ul>
+                                                <li></li><a href="#">Thời trang</a>
+                                        </li>
+                                        <li></li><a href="#">Phụ kiện</a></li>
+                                        <li></li><a href="#">Mỹ phẩm</a></li>
+                                        <li></li><a href="#">Thực phẩm</a></li>
+                                    </ul>
+                                    </li>
+                                    <li><a href="#">Catalog</a></li>
+                                    <li><a href="#">Khác</a></li>
+                                    </ul>
                                 </div>
-                            </ul>
+                                <!-- <div class="dropdown-divider"></div> -->
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" class="btn btn-dark btn-login-mobile">Đăng nhập</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
             <div class="row menu w-100 m-0">
-                <div class="overflow-x-auto">
+                <div class="">
                     <hr class="mb-3 mx-n4" style="margin-top:0">
-                    <div class="d-flex justify-content-center align-items-center" style="white-space: nowrap;">
-                        <a class="menu-item" href="./home.html">Trang chủ</a>
-                        <a class="menu-item" href="#">Du lịch</a>
-                        <a class="menu-item" href="#">Lookbook</a>
-                        <a class="menu-item" href="#">Catalog</a>
-                        <a class="menu-item" href="#">Khác</a>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex align-items-center menu-container"
+                            style="white-space: nowrap; list-style-type: none;">
+                            <li><a class="menu-item" href="./home.html">Trang chủ</a></li>
+                            <li class="dropdown dropdown-li">
+                                <a class="menu-item drop-a-btn" href="#">Du lịch</a>
+                                <div class="dropdown-content-hover">
+                                    <a href="#">Chân dung</a>
+                                    <a href="#">Phong cảnh</a>
+                                    <a href="#">Đường phố</a>
+                                    <a href="#">Thể thao</a>
+                                    <a href="#">Kỷ yếu</a>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-li">
+                                <a class="menu-item drop-a-btn" href="#">Lookbook</a>
+                                <div class="dropdown-content-hover">
+                                    <a href="#">Thời trang</a>
+                                    <a href="#">Phụ kiện</a>
+                                    <a href="#">Mỹ phẩm</a>
+                                    <a href="#">Thực phẩm</a>
+                                </div>
+                            </li>
+                            <li><a class="menu-item" href="#">Catalog</a></li>
+                            <li><a class="menu-item" href="#">Khác</a></li>
+                        </div>
                     </div>
+
                     <hr class="my-3 mx-n4">
                 </div>
             </div>
-
-
         </div>
     </header>
 
@@ -90,12 +140,59 @@
                     <div class="col-12 col-md-4 mb-3 avartar-wrapper" style="min-height:150px;">
                         <div class="rounded-circle overflow-hidden avartar"
                             style="width: 130px; height: 130px; aspect-ratio: 1;">
-                            <img src="./assets/avatar.jpeg" alt="Avatar" class="w-100">
+                            <img src="./assets/avt1.JPG" alt="Avatar" class="w-100">
                         </div>
                     </div>
                     <div class="col-12 col-md-8 mb-3">
                         <div class="header">
-                            <h2 class="title">MaiHuong</h2>
+                            <h2 class="title">Mai Hương</h2>
+                            <p class="mt-4" style="font-weight:bold">Đã từng nhận giải "Nhiếp ảnh gia trẻ tuổi" năm 2019
+                                do Hiệp hội Nhiếp ảnh
+                                Việt Nam (VAPA)
+                                tổ chức</p>
+                            <p>Có kinh nghiệm trong lĩnh vực chụp lookbook,...</p>
+                            <p style="font-weight:bold"><i class="bi bi-joystick"></i> Hà Nội</p>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-secondary dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Đặt ngay
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-start"
+                                    style="width: 90vw; min-width: 250px; max-width:350px">
+                                    <form class="p-4" onsubmit="return false">
+                                        <div class="mb-3">
+                                            <label for="exampleDropdownFormEmail1" class="form-label">Địa chỉ
+                                                mail</label>
+                                            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
+                                                placeholder="email@example.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="html5-date-input" class="form-label">Thời gian</label>
+                                            <input class="form-control" type="date" value="2021-06-18"
+                                                id="html5-date-input" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label">Địa điểm</label>
+                                            <input type="text" class="form-control" id="location"
+                                                placeholder="Nhập địa điểm">
+                                        </div>
+                                        <div class="mb-4">
+                                            <label for="package" class="form-label">Gói chụp hình</label>
+                                            <select class="form-select" id="package">
+                                                <option selected value="" disabled>Chọn gói</option>
+                                                <option value="1">Gói 1</option>
+                                                <option value="2">Gói 2</option>
+                                                <option value="3">Gói 3</option>
+                                            </select>
+                                        </div>
+                                        <div class="dropdown-divider"></div>
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button" class="btn btn-secondary"
+                                                style="width:60px">Đặt</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,19 +203,19 @@
                             <li class="nav-item mx-2" role="presentation">
                                 <button class="btn active btn-dark" id="pills-home-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                    aria-selected="true"><i class="bi bi-image"></i> Photo</button>
+                                    aria-selected="true"><i class="bi bi-image"></i> Ảnh</button>
                             </li>
                             <li class="nav-item mx-2" role="presentation">
                                 <button class="btn btn-dark" id="pills-profile-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-profile" type="button" role="tab"
                                     aria-controls="pills-profile" aria-selected="false"><i
-                                        class="bi bi-suit-heart-fill"></i> Like</button>
+                                        class="bi bi-suit-heart-fill"></i> Thích</button>
                             </li>
                             <li class="nav-item mx-2" role="presentation">
                                 <button class="btn btn-dark" id="pills-contact-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-contact" type="button" role="tab"
                                     aria-controls="pills-contact" aria-selected="false"><i
-                                        class="bi bi-collection-fill"></i> Collections</button>
+                                        class="bi bi-collection-fill"></i> Bộ sưu tập</button>
                             </li>
                         </ul>
                         <hr class="my-3 mx-n4">
@@ -127,21 +224,21 @@
                                 aria-labelledby="pills-home-tab">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-4 mb-3">
                                             <div class="position-relative">
                                                 <img src="./assets/image01.jpg" class="card-img-top" alt="Product 1"
                                                     style="height: 100%;">
                                                 <div class="overlay"></div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-4 mb-3">
                                             <div class="position-relative">
                                                 <img src="./assets/image02.jpg" class="card-img-top" alt="Product 1"
                                                     style="height: 100%;">
                                                 <div class="overlay"></div>
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-4">
+                                        <div class="col-12 col-md-4 mb-3">
                                             <div class="position-relative">
                                                 <img src="./assets/image03.jpg" class="card-img-top" alt="Product 1"
                                                     style="height: 100%;">
@@ -162,7 +259,7 @@
         </div>
     </main>
     <footer>
-        <div class="row row-cols-5 py-5 my-5 border-top">
+        <div class="row w-100 row-cols-5 py-5 my-5 border-top">
             <div class="col">
                 <a href="./home.html" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <i class="fa-solid fa-house"></i>
@@ -210,6 +307,14 @@
 
     </footer>
     <script src="./search.js"></script>
+    <!-- <script>
+        $('.menu-list-mobile ul li .first').click(function () {
+            $('.menu-list-mobile ul li .first span').toggleClass("rotate");
+        });
+        $('.menu-list-mobile ul li .second').click(function () {
+            $('.menu-list-mobile ul li .second span').toggleClass("rotate");
+        });
+    </script> -->
 </body>
 
 </html>

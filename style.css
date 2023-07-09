@@ -57,7 +57,24 @@ body {
 
 .wrapper-search-bar {
     width: calc(100% - 45px);
+    position: relative;
 }
+
+/* .suggest-single {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: hsl(252, 50%, 95%);
+    padding: 10px 15px;
+    min-height: 100px;
+    z-index: 2;
+}
+
+.suggest-single a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0;
+} */
 
 .sm-search {
     width: 45px;
